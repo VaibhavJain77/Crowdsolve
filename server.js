@@ -43,7 +43,7 @@ app.post("/api/summarize", async (req, res) => {
     const result = await model.generateContent(prompt);
     res.json({ summary: result.response.text() });
   } catch (err) {
-    console.error("--- GEMINI SUMMARY ERROR ---", err);
+    console.error("--- vSUMMARY ERROR ---", err);
     res.status(500).json({ error: err.message });
   }
 });
