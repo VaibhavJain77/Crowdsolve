@@ -884,7 +884,7 @@ problemForm.addEventListener("submit", async (e) => {
     recordingStatus.textContent = "";
 
     closeModal(problemModal);
-    // We no longer need this, because we added the card manually: fetchAndRenderProblems();
+   
     showToast("Problem posted successfully!", "success");
 
   } catch (e) {
@@ -1052,8 +1052,8 @@ async function apiPost(endpoint, body, isJson = true) {
     options.body = JSON.stringify(body);
   }
 
-  // CORRECTED LINE: This now uses the 'endpoint' variable to build the correct URL
-  const res = await fetch(`https://crowdsolve-iqa9.onrender.com/api/${endpoint}`, options);
+  
+  const res = await fetch(`https://crowdsolve-backend-q875.onrender.com/api/${endpoint}`, options);
 
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: "Server error" }));
@@ -1065,12 +1065,12 @@ async function apiPost(endpoint, body, isJson = true) {
 }
 
 async function getAISolution(query) {
-  // This now correctly tells apiPost to use the '/api/solve' endpoint
+  
   return (await apiPost("solve", { query })).solution;
 }
 
 async function getAISummary(solutionsText) {
-  // This now correctly tells apiPost to use the '/api/summarize' endpoint
+  
   return (await apiPost("summarize", { solutionsText })).summary;
 }
 async function transcribeAudio(audioFile) {
