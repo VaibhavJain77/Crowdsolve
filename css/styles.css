@@ -1,0 +1,93 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+.gradient-text {
+  background: linear-gradient(to right, #38bdf8, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.feature-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.1),
+    0 4px 6px -2px rgba(56, 189, 248, 0.05);
+}
+.btn-primary {
+  background: linear-gradient(to right, #38bdf8, #6366f1);
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+}
+.btn-primary:disabled {
+  background: #334155;
+  cursor: not-allowed;
+  filter: brightness(0.7);
+}
+.btn-secondary {
+  background-color: #334155;
+  border: 1px solid #475569;
+  transition: background-color 0.3s ease;
+}
+.btn-secondary:hover {
+  background-color: #475569;
+}
+.btn-secondary:disabled {
+  background-color: #1e293b;
+  color: #475569;
+  cursor: not-allowed;
+}
+.modal {
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+.modal-content {
+  transition: transform 0.3s ease;
+  transform: scale(0.95);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.modal.opacity-100 .modal-content {
+  transform: scale(1);
+}
+.auth-tab-active {
+  color: #38bdf8;
+  border-bottom-color: #38bdf8;
+}
+.auth-tab-inactive {
+  color: #94a3b8;
+  border-bottom-color: transparent;
+}
+.typing-cursor {
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #38bdf8;
+  }
+}
+#toast-notification {
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#toast-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.my-content-item:hover {
+  background-color: #475569;
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
